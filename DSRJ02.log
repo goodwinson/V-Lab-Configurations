@@ -1,0 +1,1016 @@
+﻿root@D08-DSRJ02> show configuration | display set | no-more 
+set version 18.2R1.9
+set groups RSVP-OPTIONS protocols rsvp preemption aggressive
+set groups RSVP-OPTIONS protocols rsvp preemption soft-preemption cleanup-timer 30
+set groups RSVP-OPTIONS protocols rsvp interface lo0.0
+set groups RSVP-OPTIONS protocols rsvp interface fxp0.0 disable
+set groups RSVP-OPTIONS protocols rsvp interface <*> subscription 92
+set groups RSVP-OPTIONS protocols rsvp interface <*> update-threshold 2
+set groups RSVP-OPTIONS protocols rsvp interface <*> link-protection optimize-timer 300
+set groups MPLS-OPTIONS protocols mpls statistics file mpls.stats
+set groups MPLS-OPTIONS protocols mpls statistics interval 300
+set groups MPLS-OPTIONS protocols mpls statistics auto-bandwidth
+set groups MPLS-OPTIONS protocols mpls log-updown syslog
+set groups MPLS-OPTIONS protocols mpls log-updown trap
+set groups MPLS-OPTIONS protocols mpls traffic-engineering bgp
+set groups MPLS-OPTIONS protocols mpls optimize-aggressive
+set groups MPLS-OPTIONS protocols mpls no-propagate-ttl
+set groups MPLS-OPTIONS protocols mpls explicit-null
+set groups MPLS-OPTIONS protocols mpls optimize-timer 300
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*VIDEO*> link-protection
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*> ldp-tunneling
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-BE> ldp-tunneling
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-BE> soft-preemption
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-BE> priority 7 7
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-BE> least-fill
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-BE> link-protection
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-BE> auto-bandwidth adjust-interval 1800
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-BE> auto-bandwidth adjust-threshold 5
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-BE> auto-bandwidth minimum-bandwidth 1m
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-BE> auto-bandwidth maximum-bandwidth 100g
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-BE> auto-bandwidth adjust-threshold-overflow-limit 2
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-EF> ldp-tunneling
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-EF> soft-preemption
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-EF> priority 2 2
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-EF> least-fill
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-EF> link-protection
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-EF> auto-bandwidth adjust-interval 1800
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-EF> auto-bandwidth adjust-threshold 5
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-EF> auto-bandwidth minimum-bandwidth 100k
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-EF> auto-bandwidth maximum-bandwidth 100g
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-EF> auto-bandwidth adjust-threshold-overflow-limit 2
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-AF> ldp-tunneling
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-AF> soft-preemption
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-AF> priority 4 4
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-AF> least-fill
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-AF> link-protection
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-AF> auto-bandwidth adjust-interval 1800
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-AF> auto-bandwidth adjust-threshold 5
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-AF> auto-bandwidth minimum-bandwidth 100k
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-AF> auto-bandwidth maximum-bandwidth 100g
+set groups MPLS-OPTIONS protocols mpls label-switched-path <*-AF> auto-bandwidth adjust-threshold-overflow-limit 2
+set groups MPLS-OPTIONS protocols mpls label-switched-path <MVPN*> ldp-tunneling
+set groups MPLS-OPTIONS protocols mpls label-switched-path <MVPN*> soft-preemption
+set groups MPLS-OPTIONS protocols mpls label-switched-path <MVPN*> priority 3 3
+set groups MPLS-OPTIONS protocols mpls label-switched-path <MVPN*> least-fill
+set groups MPLS-OPTIONS protocols mpls label-switched-path <MVPN*> link-protection
+set groups MPLS-OPTIONS protocols mpls label-switched-path <MVPN*> auto-bandwidth adjust-interval 1800
+set groups MPLS-OPTIONS protocols mpls label-switched-path <MVPN*> auto-bandwidth adjust-threshold 5
+set groups MPLS-OPTIONS protocols mpls label-switched-path <MVPN*> auto-bandwidth minimum-bandwidth 100k
+set groups MPLS-OPTIONS protocols mpls label-switched-path <MVPN*> auto-bandwidth maximum-bandwidth 100g
+set groups MPLS-OPTIONS protocols mpls label-switched-path <MVPN*> auto-bandwidth adjust-threshold-overflow-limit 2
+set groups MPLS-OPTIONS protocols mpls interface lo0.0
+set groups MPLS-OPTIONS protocols mpls interface fxp0.0 disable
+set groups LDP-OPTIONS protocols ldp transport-address router-id
+set groups LDP-OPTIONS protocols ldp interface lo0.0
+set groups REJECT-/25-/32 policy-options policy-statement <*> term <*> from route-filter 0.0.0.0/0 prefix-length-range /25-/32
+set groups COX-ROUTES policy-options policy-statement <*> term <*> from community PRIMARY
+set groups COX-ROUTES policy-options policy-statement <*> term <*> from community BACKUP
+set groups COX-ROUTES policy-options policy-statement <*> term <*> from community INTERNAL
+set groups STATIC_and_DIRECT-TO-BGP policy-options policy-statement <*> term <*> from protocol static
+set groups STATIC_and_DIRECT-TO-BGP policy-options policy-statement <*> term <*> from protocol direct
+set groups STATIC_and_DIRECT-TO-BGP policy-options policy-statement <*> term <*> from prefix-list Local-to-BGP
+set groups MPLS-OPTIONS-P2MP protocols mpls statistics file mpls.stats
+set groups MPLS-OPTIONS-P2MP protocols mpls statistics interval 300
+set groups MPLS-OPTIONS-P2MP protocols mpls log-updown syslog
+set groups MPLS-OPTIONS-P2MP protocols mpls log-updown trap
+set groups MPLS-OPTIONS-P2MP protocols mpls traffic-engineering bgp
+set groups MPLS-OPTIONS-P2MP protocols mpls no-propagate-ttl
+set groups MPLS-OPTIONS-P2MP protocols mpls explicit-null
+set groups MPLS-OPTIONS-P2MP protocols mpls optimize-timer 300
+set groups MPLS-OPTIONS-P2MP protocols mpls label-switched-path <*VIDEO*> retry-timer 120
+set groups MPLS-OPTIONS-P2MP protocols mpls label-switched-path <*VIDEO*> priority 3 3
+set groups MPLS-OPTIONS-P2MP protocols mpls label-switched-path <*VIDEO*> link-protection
+set groups MPLS-OPTIONS-P2MP protocols mpls label-switched-path <*MCST*> retry-timer 120
+set groups MPLS-OPTIONS-P2MP protocols mpls label-switched-path <*MCST*> priority 6 6
+set groups MPLS-OPTIONS-P2MP protocols mpls label-switched-path <*MCST*> link-protection
+set groups MPLS-OPTIONS-P2MP protocols mpls label-switched-path <*> retry-timer 120
+set groups MPLS-OPTIONS-P2MP protocols mpls label-switched-path <*> priority 6 6
+set groups MPLS-OPTIONS-P2MP protocols mpls label-switched-path <*> link-protection
+set groups MPLS-OPTIONS-P2MP protocols mpls interface lo0.0
+set groups MPLS-OPTIONS-P2MP protocols mpls interface fxp0.0 disable
+set groups WMK-INTERFACE class-of-service interfaces "<ge-0/0/]*>" unit 0 classifiers dscp-ipv6 CLASSIFY-DSCP-IPV6
+set groups WMK-INTERFACE class-of-service interfaces "<ge-0/0/]*>" unit 0 classifiers exp CLASSIFY-EXP
+set groups WMK-INTERFACE class-of-service interfaces "<ge-0/0/]*>" unit 0 classifiers inet-precedence CLASSIFY-IPP
+set groups WMK-INTERFACE class-of-service interfaces "<ge-0/0/]*>" unit 0 rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK
+set groups WMK-INTERFACE class-of-service interfaces "<ge-0/0/]*>" unit 0 rewrite-rules exp WRITE-EXP
+set groups WMK-INTERFACE class-of-service interfaces "<ge-0/0/]*>" unit 0 rewrite-rules inet-precedence WRITE-IPP
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management action-profile PEER-DOWN-DROP-LINK event link-adjacency-loss
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management action-profile PEER-DOWN-DROP-LINK action syslog
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management action-profile PEER-DOWN-DROP-LINK action link-down
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management action-profile LQM-FAULT-DROP-LINK event link-event-rate symbol-period 5
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management action-profile LQM-FAULT-DROP-LINK event link-event-rate frame-error 5
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management action-profile LQM-FAULT-DROP-LINK event link-event-rate frame-period 10
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management action-profile LQM-FAULT-DROP-LINK event link-event-rate frame-period-summary 2
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management action-profile LQM-FAULT-DROP-LINK action syslog
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management action-profile LQM-FAULT-DROP-LINK action link-down
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management interface <*> apply-action-profile PEER-DOWN-DROP-LINK
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management interface <*> apply-action-profile LQM-FAULT-DROP-LINK
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management interface <*> pdu-interval 300
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management interface <*> link-discovery active
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management interface <*> pdu-threshold 3
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management interface <*> negotiation-options allow-remote-loopback
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management interface <*> event-thresholds symbol-period 5
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management interface <*> event-thresholds frame-error 5
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management interface <*> event-thresholds frame-period 10
+set groups ETH-OAM-OPTIONS protocols oam ethernet link-fault-management interface <*> event-thresholds frame-period-summary 2
+set system root-authentication encrypted-password "$6$4mUKzoAf$SXX1N7JowkT3jRZ8RUk56GBI6vUAj41BHEuAiI2gTM.tU7M3R7un.f5l42tMt5l3.EvQD241xbXRVaJDXv4yO/"
+set system host-name D08-DSRJ02
+set system domain-name d08-dsrj02.vlab.cox.net
+set system time-zone EST
+set system name-server 70.175.247.4
+set system services ssh root-login allow
+set system services ssh protocol-version v2
+set system services ssh client-alive-count-max 10
+set system services ssh client-alive-interval 200
+set system services ssh fingerprint-hash md5
+set system services netconf ssh
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set chassis network-services enhanced-ip
+set interfaces ge-0/0/0 mtu 9000
+set interfaces ge-0/0/0 unit 0 family inet address 99.7.8.8/24
+set interfaces ge-0/0/0 unit 0 family iso
+set interfaces ge-0/0/0 unit 0 family mpls maximum-labels 5
+set interfaces ge-0/0/1 mtu 9100
+set interfaces ge-0/0/1 unit 0 family inet address 99.2.8.8/24
+set interfaces ge-0/0/1 unit 0 family iso
+set interfaces ge-0/0/1 unit 0 family mpls
+set interfaces ge-0/0/2 mtu 9100
+set interfaces ge-0/0/2 unit 0 family inet address 1.8.12.8/24
+set interfaces ge-0/0/2 unit 0 family iso
+set interfaces ge-0/0/2 unit 0 family inet6 address 2001:8:12::8/64
+set interfaces ge-0/0/2 unit 0 family mpls
+set interfaces ge-0/0/3 mtu 9100
+set interfaces ge-0/0/3 unit 0 family inet address 1.8.14.8/24
+set interfaces ge-0/0/3 unit 0 family iso
+set interfaces ge-0/0/3 unit 0 family inet6 address 2001:8:14::8/64
+set interfaces ge-0/0/3 unit 0 family mpls
+set interfaces ge-0/0/4 unit 0 family inet address 1.7.8.8/24
+set interfaces ge-0/0/4 unit 0 family iso
+set interfaces ge-0/0/4 unit 0 family inet6 address 2001:7:8::8/64
+set interfaces ge-0/0/4 unit 0 family mpls maximum-labels 5
+set interfaces ge-0/0/5 unit 0 family inet address 1.108.112.108/24
+set interfaces ge-0/0/5 unit 0 family iso
+set interfaces ge-0/0/5 unit 0 family mpls maximum-labels 5
+set interfaces fxp0 unit 0 family inet address 10.26.5.8/22
+set interfaces lo0 unit 0 family inet address 10.255.0.8/32
+set interfaces lo0 unit 0 family iso address 49.0010.0102.5500.0008.00
+set interfaces lo0 unit 0 family inet6 address 2001:255::8/128
+set interfaces lo0 unit 1 family inet address 10.255.0.108/32
+set interfaces lo0 unit 1 family iso address 49.0010.0102.5500.0108.00
+set routing-options source-packet-routing mapping-server-entry COX-SRMS prefix-segment 127.0.0.1/32 index 200
+set routing-options source-packet-routing mapping-server-entry COX-SRMS prefix-segment 10.10.0.15/32 index 201
+set routing-options source-packet-routing mapping-server-entry COX-SRMS prefix-segment 10.10.0.17/32 index 202
+set routing-options rib inet6.0 static route ::/0 discard
+set routing-options rib inet6.0 static route ::/0 preference 255
+set routing-options rib inet6.0 aggregate defaults metric 0
+set routing-options rib inet6.0 aggregate defaults discard
+set routing-options rib inet6.0 aggregate defaults brief
+set routing-options rib inet6.0 aggregate defaults passive
+set routing-options rib inet6.0 aggregate route 2110::/16 community 22773:130
+set routing-options rib inet6.0 aggregate route 2110::/16 community 22773:62090
+set routing-options rib inet6.0 aggregate route 2110::/16 community 22773:64002
+set routing-options rib inet6.0 aggregate route 2110::/16 community 22773:64090
+set routing-options rib inet6.0 aggregate route 2210::/16 community 22773:130
+set routing-options rib inet6.0 aggregate route 2210::/16 community 22773:59090
+set routing-options rib inet6.0 aggregate route 2210::/16 community 22773:64002
+set routing-options rib inet6.0 aggregate route 2210::/16 community 22773:64090
+set routing-options rib inet6.0 aggregate route 2010::/16 policy ROUTE-CONTRIBUTORS
+set routing-options rib inet6.0 aggregate route 2010::/16 community 22773:64002
+set routing-options rib inet6.0 aggregate route 2010::/16 community 22773:64090
+set routing-options rib inet6.0 aggregate route 2010::/16 community 22773:55090
+set routing-options rib inet6.0 aggregate route 2010::/16 community no-export
+set routing-options rib inet6.0 aggregate route 2001::/16 community 22773:64002
+set routing-options rib inet6.0 aggregate route 2001::/16 community 22773:64090
+set routing-options rib inet6.0 aggregate route 2001::/16 community 22773:59090
+set routing-options static route 0.0.0.0/0 next-hop 10.26.4.1
+set routing-options aggregate defaults metric 0
+set routing-options aggregate defaults as-path aggregator 22773 10.255.0.8
+set routing-options aggregate defaults discard
+set routing-options aggregate defaults brief
+set routing-options aggregate defaults passive
+set routing-options aggregate route 10.10.0.0/16 policy ROUTE-CONTRIBUTORS
+set routing-options aggregate route 10.10.0.0/16 community 22773:64002
+set routing-options aggregate route 10.10.0.0/16 community 22773:64090
+set routing-options aggregate route 10.10.0.0/16 community 22773:55090
+set routing-options aggregate route 10.10.0.0/16 community no-export
+set routing-options aggregate route 110.0.0.0/8 community 22773:130
+set routing-options aggregate route 110.0.0.0/8 community 22773:62090
+set routing-options aggregate route 110.0.0.0/8 community 22773:64002
+set routing-options aggregate route 110.0.0.0/8 community 22773:64090
+set routing-options aggregate route 210.0.0.0/8 community 22773:130
+set routing-options aggregate route 210.0.0.0/8 community 22773:59090
+set routing-options aggregate route 210.0.0.0/8 community 22773:64002
+set routing-options aggregate route 210.0.0.0/8 community 22773:64090
+set routing-options aggregate route 1.0.0.0/8 policy ROUTE-CONTRIBUTORS
+set routing-options aggregate route 1.0.0.0/8 community 22773:64002
+set routing-options aggregate route 1.0.0.0/8 community 22773:64090
+set routing-options aggregate route 1.0.0.0/8 community 22773:59090
+set routing-options rib-groups PIM export-rib inet.2
+set routing-options rib-groups PIM import-rib inet.2
+set routing-options rib-groups MVPN-PIM export-rib MVPN.inet.2
+set routing-options rib-groups MVPN-PIM import-rib MVPN.inet.2
+set routing-options router-id 10.255.0.8
+set routing-options autonomous-system 22773
+set routing-options forwarding-table export CBF-POLICY
+set routing-options forwarding-table indirect-next-hop
+set routing-options multicast ssm-groups 224.0.0.0/4
+set protocols rsvp apply-groups RSVP-OPTIONS
+set protocols rsvp interface ge-0/0/0.0
+set protocols rsvp interface ge-0/0/1.0
+set protocols mpls apply-groups MPLS-OPTIONS
+set protocols mpls traffic-engineering bgp-igp-both-ribs
+deactivate protocols mpls traffic-engineering bgp-igp-both-ribs
+set protocols mpls ipv6-tunneling
+set protocols mpls label-switched-path MVPN-LSP-TEMPLATE-MCST apply-groups MPLS-OPTIONS-P2MP
+set protocols mpls label-switched-path MVPN-LSP-TEMPLATE-MCST apply-groups-except MPLS-OPTIONS
+set protocols mpls label-switched-path MVPN-LSP-TEMPLATE-MCST template
+set protocols mpls label-switched-path MVPN-LSP-TEMPLATE-MCST bandwidth 5m
+set protocols mpls label-switched-path MVPN-LSP-TEMPLATE-MCST description "P2MP TE LSP TEMPLATE"
+set protocols mpls label-switched-path MVPN-LSP-TEMPLATE-MCST p2mp
+set protocols mpls label-switched-path MVPN-LSP-TEMPLATE apply-groups MPLS-OPTIONS
+set protocols mpls label-switched-path MVPN-LSP-TEMPLATE apply-groups-except MPLS-OPTIONS-P2MP
+set protocols mpls label-switched-path MVPN-LSP-TEMPLATE template
+set protocols mpls label-switched-path MVPN-LSP-TEMPLATE description "Multicast LSP"
+set protocols mpls label-switched-path DSR2-BPR1-BE to 10.255.0.5
+set protocols mpls label-switched-path DSR2-BPR1-AF to 10.255.0.5
+set protocols mpls label-switched-path DSR2-BPR1-EF to 10.255.0.5
+set protocols mpls label-switched-path DSR2-BPR2-BE to 10.255.0.6
+set protocols mpls label-switched-path DSR2-BPR2-AF to 10.255.0.6
+set protocols mpls label-switched-path DSR2-BPR2-EF to 10.255.0.6
+set protocols mpls label-switched-path DSR2-DSR1-BE to 10.255.0.7
+set protocols mpls label-switched-path DSR2-DSR1-AF to 10.255.0.7
+set protocols mpls label-switched-path DSR2-DSR1-EF to 10.255.0.7
+set protocols mpls label-switched-path DSR2-DSR3-BE to 10.255.0.9
+set protocols mpls label-switched-path DSR2-DSR3-AF to 10.255.0.9
+set protocols mpls label-switched-path DSR2-DSR3-EF to 10.255.0.9
+set protocols mpls label-switched-path DSR2-DSR4-BE to 10.255.0.10
+set protocols mpls label-switched-path DSR2-DSR4-AF to 10.255.0.10
+set protocols mpls label-switched-path DSR2-DSR4-EF to 10.255.0.10
+set protocols mpls interface ge-0/0/0.0
+set protocols mpls interface ge-0/0/1.0
+set protocols mpls interface ge-0/0/3.0
+set protocols mpls interface ge-0/0/2.0
+set protocols mpls interface ge-0/0/4.0
+set protocols bgp group V4-CORE type internal
+set protocols bgp group V4-CORE local-address 10.255.0.8
+set protocols bgp group V4-CORE advertise-inactive
+set protocols bgp group V4-CORE import iBGP-in
+set protocols bgp group V4-CORE family inet unicast
+deactivate protocols bgp group V4-CORE family inet multicast
+set protocols bgp group V4-CORE family inet labeled-unicast rib inet.3
+set protocols bgp group V4-CORE family inet-vpn unicast
+set protocols bgp group V4-CORE family inet-vpn any
+set protocols bgp group V4-CORE family inet6 labeled-unicast explicit-null
+set protocols bgp group V4-CORE family inet6-vpn any
+set protocols bgp group V4-CORE family evpn signaling
+set protocols bgp group V4-CORE family inet-mvpn signaling
+set protocols bgp group V4-CORE family route-target advertise-default
+set protocols bgp group V4-CORE export iBGP-POLICY
+set protocols bgp group V4-CORE multipath
+set protocols bgp group V4-CORE neighbor 10.255.0.7 description DSRJ01
+set protocols bgp group V4-CORE neighbor 10.255.0.9 description DSRJ03
+set protocols bgp group V4-CORE neighbor 10.255.0.10 description DSRJ04
+set protocols bgp group V4-CORE neighbor 10.255.0.5 description BPRJ01
+set protocols bgp group V4-CORE neighbor 10.255.0.6 description BPRJ02
+set protocols bgp group V4-METRO type internal
+set protocols bgp group V4-METRO description "Route Reflector Clients"
+set protocols bgp group V4-METRO local-address 10.255.0.8
+set protocols bgp group V4-METRO advertise-inactive
+set protocols bgp group V4-METRO import V4-RR-BGP-IN-IMPORT-OPTIONS
+set protocols bgp group V4-METRO import V4-RR-BGP-IN
+set protocols bgp group V4-METRO family inet unicast
+set protocols bgp group V4-METRO family inet multicast
+set protocols bgp group V4-METRO family inet labeled-unicast rib inet.3
+set protocols bgp group V4-METRO family inet-vpn unicast
+set protocols bgp group V4-METRO family inet6-vpn unicast
+set protocols bgp group V4-METRO family evpn signaling
+set protocols bgp group V4-METRO export V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT
+set protocols bgp group V4-METRO cluster 0.0.0.10
+set protocols bgp group V4-METRO multipath
+set protocols bgp group V4-METRO neighbor 10.10.0.11 description PEER
+set protocols bgp group V4-METRO neighbor 10.10.0.12 description PEER
+set protocols bgp group V4-METRO neighbor 10.10.0.13 description PEER
+set protocols bgp group V4-METRO neighbor 10.10.0.14 description PEER
+set protocols bgp group V6-METRO type internal
+set protocols bgp group V6-METRO description "Route Reflector Clients"
+set protocols bgp group V6-METRO local-address 2001:255::8
+set protocols bgp group V6-METRO advertise-inactive
+set protocols bgp group V6-METRO import V6-RR-BGP-IN-IMPORT-OPTIONS
+set protocols bgp group V6-METRO import V6-RR-BGP-IN
+set protocols bgp group V6-METRO family inet6 unicast
+set protocols bgp group V6-METRO export V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT
+set protocols bgp group V6-METRO cluster 0.0.0.10
+set protocols bgp group V6-METRO multipath
+set protocols bgp group V6-METRO neighbor 2010::11 description PEER
+set protocols bgp group V6-METRO neighbor 2010::12 description PEER
+set protocols bgp group V6-METRO neighbor 2010::13 description PEER
+set protocols bgp group V6-METRO neighbor 2010::14 description PEER
+set protocols isis export EXPORT-ISIS
+set protocols isis suppress-attached-bit
+set protocols isis backup-spf-options use-post-convergence-lfa maximum-labels 3
+set protocols isis backup-spf-options use-post-convergence-lfa maximum-backup-paths 2
+set protocols isis topologies ipv6-unicast
+set protocols isis source-packet-routing srgb start-label 16000
+set protocols isis source-packet-routing srgb index-range 8000
+set protocols isis source-packet-routing node-segment ipv4-index 8
+set protocols isis source-packet-routing explicit-null
+set protocols isis source-packet-routing mapping-server COX-SRMS
+set protocols isis level 1 wide-metrics-only
+set protocols isis level 1 labeled-preference 8
+set protocols isis level 2 wide-metrics-only
+set protocols isis level 2 source-packet-routing disable
+set protocols isis interface ge-0/0/0.0 point-to-point
+set protocols isis interface ge-0/0/0.0 level 2 metric 1
+set protocols isis interface ge-0/0/0.0 level 1 disable
+set protocols isis interface ge-0/0/1.0 point-to-point
+set protocols isis interface ge-0/0/1.0 level 2 metric 1
+set protocols isis interface ge-0/0/1.0 level 1 disable
+set protocols isis interface ge-0/0/2.0 point-to-point
+set protocols isis interface ge-0/0/2.0 level 1 post-convergence-lfa node-protection
+set protocols isis interface ge-0/0/2.0 level 1 metric 16
+set protocols isis interface ge-0/0/2.0 level 1 ipv6-unicast-metric 16
+set protocols isis interface ge-0/0/2.0 level 2 disable
+set protocols isis interface ge-0/0/3.0 ldp-synchronization
+set protocols isis interface ge-0/0/3.0 point-to-point
+set protocols isis interface ge-0/0/3.0 level 1 post-convergence-lfa node-protection
+set protocols isis interface ge-0/0/3.0 level 1 metric 16
+set protocols isis interface ge-0/0/3.0 level 1 ipv6-unicast-metric 16
+set protocols isis interface ge-0/0/3.0 level 2 disable
+set protocols isis interface ge-0/0/4.0 ldp-synchronization
+set protocols isis interface ge-0/0/4.0 point-to-point
+set protocols isis interface ge-0/0/4.0 level 1 post-convergence-lfa node-protection
+set protocols isis interface ge-0/0/4.0 level 1 metric 40
+set protocols isis interface ge-0/0/4.0 level 1 ipv6-unicast-metric 40
+set protocols isis interface ge-0/0/4.0 level 2 disable
+set protocols isis interface lo0.0 passive
+set protocols isis interface lo0.0 level 1 passive
+set protocols isis interface lo0.0 level 2 passive
+set protocols ldp apply-groups LDP-OPTIONS
+set protocols ldp explicit-null
+set protocols ldp interface ge-0/0/2.0
+set protocols ldp interface ge-0/0/3.0
+set protocols ldp interface ge-0/0/4.0
+set protocols ldp neighbor 10.255.0.7
+set protocols pim rib-group inet PIM
+set protocols pim interface ge-0/0/2.0 family inet
+set protocols pim interface ge-0/0/2.0 mode sparse
+set protocols pim interface ge-0/0/2.0 hello-interval 1
+set protocols pim interface ge-0/0/3.0 family inet
+set protocols pim interface ge-0/0/3.0 mode sparse
+set protocols pim interface ge-0/0/3.0 hello-interval 1
+set protocols pim interface ge-0/0/4.0 family inet
+set protocols pim interface ge-0/0/4.0 mode sparse
+set protocols pim interface ge-0/0/4.0 hello-interval 1
+set protocols source-packet-routing
+set protocols oam ethernet link-fault-management apply-groups ETH-OAM-OPTIONS
+set protocols oam ethernet link-fault-management interface ge-0/0/1
+set protocols oam ethernet link-fault-management interface ge-0/0/2
+set protocols oam ethernet link-fault-management interface ge-0/0/3
+set protocols lldp management-address 10.255.0.8
+set protocols lldp port-id-subtype interface-name
+set protocols lldp interface all
+set protocols lldp interface fxp0 disable
+set policy-options prefix-list Local-to-OSPF 127.0.0.0/32
+set policy-options prefix-list V4-CB-MGMT-PREFIXES 127.0.0.0/32
+set policy-options prefix-list V4-LOCAL 127.0.0.0/32
+set policy-options prefix-list Local-Only-to-BGP 127.0.0.0/32
+set policy-options prefix-list Local-to-BGP 127.0.0.0/32
+set policy-options prefix-list Local-to-BGPv6 ::127/128
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:0db8::/32 orlonger
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:0000::/32 exact
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:0200::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:0400::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:0600::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:0800::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:0a00::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:0c00::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:0e00::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:1200::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:1400::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:1600::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:1800::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:1a00::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:1c00::/22 prefix-length-range /22-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:2000::/20 prefix-length-range /20-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:3000::/21 prefix-length-range /21-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:3800::/22 prefix-length-range /22-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:4000::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:4200::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:4400::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:4600::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:4800::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:4a00::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:4c00::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:5000::/20 prefix-length-range /20-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:8000::/19 prefix-length-range /19-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:a000::/20 prefix-length-range /20-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2001:b000::/20 prefix-length-range /20-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2002:0000::/16 prefix-length-range /16-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2003:0000::/18 prefix-length-range /18-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2400:0000::/12 prefix-length-range /12-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2600:0000::/12 prefix-length-range /12-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2610:0000::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2620:0000::/23 prefix-length-range /23-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2800:0000::/12 prefix-length-range /12-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2a00:0000::/12 prefix-length-range /12-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route from route-filter 2c00:0000::/12 prefix-length-range /12-/64
+set policy-options policy-statement BOGONS6 term ipv6-global-route then next policy
+set policy-options policy-statement BOGONS6 then reject
+set policy-options policy-statement CBF-POLICY term MBGP from protocol bgp
+set policy-options policy-statement CBF-POLICY term MBGP then cos-next-hop-map CBF-MAP
+set policy-options policy-statement CBF-POLICY term L2CIRCUIT from protocol l2circuit
+set policy-options policy-statement CBF-POLICY term L2CIRCUIT then cos-next-hop-map CBF-MAP
+set policy-options policy-statement EXPORT-ISIS term L2-TO-L1 from protocol isis
+set policy-options policy-statement EXPORT-ISIS term L2-TO-L1 from level 2
+set policy-options policy-statement EXPORT-ISIS term L2-TO-L1 to protocol isis
+set policy-options policy-statement EXPORT-ISIS term L2-TO-L1 to level 1
+set policy-options policy-statement EXPORT-ISIS term L2-TO-L1 then reject
+set policy-options policy-statement EXPORT-ISIS term L1-TO-L2 from protocol isis
+set policy-options policy-statement EXPORT-ISIS term L1-TO-L2 from level 1
+set policy-options policy-statement EXPORT-ISIS term L1-TO-L2 to protocol isis
+set policy-options policy-statement EXPORT-ISIS term L1-TO-L2 to level 2
+set policy-options policy-statement EXPORT-ISIS term L1-TO-L2 then reject
+set policy-options policy-statement EXPORT-ISIS term MANAGEMENT from protocol direct
+set policy-options policy-statement EXPORT-ISIS term MANAGEMENT from route-filter 10.26.4.0/22 orlonger
+set policy-options policy-statement EXPORT-ISIS term MANAGEMENT then reject
+set policy-options policy-statement EXPORT-ISIS term DIRECT from protocol direct
+set policy-options policy-statement EXPORT-ISIS term DIRECT from route-filter 127.0.0.0/32 exact
+set policy-options policy-statement EXPORT-ISIS term DIRECT then accept
+set policy-options policy-statement ISIS-IPV6-DEFAULT term ISIS-DEFAULT from protocol static
+set policy-options policy-statement ISIS-IPV6-DEFAULT term ISIS-DEFAULT from route-filter ::/0 exact
+set policy-options policy-statement ISIS-IPV6-DEFAULT term ISIS-DEFAULT then accept
+set policy-options policy-statement KILL-ALL-ROUTES-IN term DENY-ALL then reject
+set policy-options policy-statement MVPN-BGP-IN term SOURCE from protocol bgp
+set policy-options policy-statement MVPN-BGP-IN term SOURCE from route-filter 210.0.0.0/8 exact
+set policy-options policy-statement MVPN-BGP-IN term SOURCE then local-preference 130
+set policy-options policy-statement MVPN-BGP-IN term SOURCE then community add LOCAL-VIDEO
+set policy-options policy-statement MVPN-BGP-IN term SOURCE then accept
+set policy-options policy-statement MVPN-BGP-IN term REJECT then reject
+set policy-options policy-statement MVPN-BGP-OUT term SOURCE from protocol bgp
+set policy-options policy-statement MVPN-BGP-OUT term SOURCE from community VIDEO
+set policy-options policy-statement MVPN-BGP-OUT term SOURCE from route-filter 220.0.0.0/8 exact
+set policy-options policy-statement MVPN-BGP-OUT term SOURCE then local-preference 100
+set policy-options policy-statement MVPN-BGP-OUT term SOURCE then next-hop self
+set policy-options policy-statement MVPN-BGP-OUT term SOURCE then accept
+set policy-options policy-statement MVPN-BGP-OUT term REJECT then reject
+set policy-options policy-statement MVPN-EXPORT term OSPF from protocol ospf
+set policy-options policy-statement MVPN-EXPORT term OSPF then reject
+set policy-options policy-statement MVPN-EXPORT term ISIS from protocol isis
+set policy-options policy-statement MVPN-EXPORT term ISIS then reject
+set policy-options policy-statement MVPN-EXPORT term ACCEPT then community add MVPN-TARGET
+set policy-options policy-statement MVPN-EXPORT term ACCEPT then accept
+set policy-options policy-statement MVPN-IMPORT term ACCEPT from community MVPN-TARGET
+set policy-options policy-statement MVPN-IMPORT term ACCEPT then accept
+set policy-options policy-statement MVPN-IMPORT term REJECT then reject
+set policy-options policy-statement MVPN-PIM-IMPORT term REMOTE-MULTICAST from route-filter 232.43.43.43/32 exact
+set policy-options policy-statement MVPN-PIM-IMPORT term REMOTE-MULTICAST then accept
+set policy-options policy-statement MVPN-PIM-IMPORT term REJECT then reject
+set policy-options policy-statement ROUTE-CONTRIBUTORS term AGGREGATE-CONTRIBUTORS from protocol bgp
+set policy-options policy-statement ROUTE-CONTRIBUTORS term AGGREGATE-CONTRIBUTORS then accept
+set policy-options policy-statement ROUTE-CONTRIBUTORS term REJECT then reject
+set policy-options policy-statement V4-CB-MGMT-IN term CB-MGMT-PREFIXES from prefix-list V4-CB-MGMT-PREFIXES
+set policy-options policy-statement V4-CB-MGMT-IN term CB-MGMT-PREFIXES then local-preference 130
+set policy-options policy-statement V4-CB-MGMT-IN term CB-MGMT-PREFIXES then community set RDC-Internal
+set policy-options policy-statement V4-CB-MGMT-IN term CB-MGMT-PREFIXES then accept
+set policy-options policy-statement V4-CB-MGMT-IN term REJECT then reject
+set policy-options policy-statement V4-CB-MGMT-OUT term DEFAULT-ONLY from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement V4-CB-MGMT-OUT term DEFAULT-ONLY then accept
+set policy-options policy-statement V4-CB-MGMT-OUT term REJECT then reject
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-BGP-LU from family inet
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-BGP-LU from protocol bgp
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-BGP-LU from community BGP-LU
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-BGP-LU then metric 0
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-BGP-LU then local-preference 130
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-BGP-LU then accept
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-EVPN from family evpn
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-EVPN from protocol bgp
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-EVPN then metric 0
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-EVPN then local-preference 130
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-EVPN then community add CBS
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-EVPN then accept
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV4 from family inet-vpn
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV4 from protocol bgp
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV4 then metric 0
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV4 then local-preference 130
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV4 then community add CBS
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV4 then accept
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV6 from family inet6-vpn
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV6 from protocol bgp
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV6 then metric 0
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV6 then local-preference 130
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV6 then community add CBS
+set policy-options policy-statement V4-RR-BGP-IN term MARKET-VPNV6 then accept
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-TRANS-DATA-RESIDENTIAL from route-filter 127.0.0.0/32 exact
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-TRANS-DATA-RESIDENTIAL from route-filter 110.0.0.0/8 orlonger
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-TRANS-DATA-RESIDENTIAL then metric 0
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-TRANS-DATA-RESIDENTIAL then local-preference 130
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-TRANS-DATA-RESIDENTIAL then community add NO-EXPORT
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-TRANS-DATA-RESIDENTIAL then community add RES
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-TRANS-DATA-RESIDENTIAL then accept
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-DATA-BUSINESS from protocol bgp
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-DATA-BUSINESS from route-filter 127.0.0.0/32 exact
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-DATA-BUSINESS from route-filter 210.0.0.0/8 orlonger
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-DATA-BUSINESS then metric 0
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-DATA-BUSINESS then local-preference 130
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-DATA-BUSINESS then community add CBS
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-DATA-BUSINESS then accept
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-LOCAL-MCAST-ROUTES from route-filter 210.15.21.0/24 exact
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-LOCAL-MCAST-ROUTES from route-filter 210.17.22.0/24 exact
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-LOCAL-MCAST-ROUTES then metric 0
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-LOCAL-MCAST-ROUTES then local-preference 130
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-LOCAL-MCAST-ROUTES then community add LOCAL-ONLY
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-LOCAL-MCAST-ROUTES then accept
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-REMOTE-MCAST-ROUTES from route-filter 220.0.0.0/8 exact
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-REMOTE-MCAST-ROUTES then metric 0
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-REMOTE-MCAST-ROUTES then local-preference 130
+set policy-options policy-statement V4-RR-BGP-IN term MRKT-REMOTE-MCAST-ROUTES then accept
+set policy-options policy-statement V4-RR-BGP-IN term REJECT then reject
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 from community MATCH-LOCAL-PREF-90
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 from policy V4-RR-BGP-IN
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then metric 0
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then local-preference 90
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then community add ADD-TO-LOCAL-PREF-90
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then community add CBS
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then accept
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 from community MATCH-LOCAL-PREF-110
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 from policy V4-RR-BGP-IN
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 then metric 0
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 then local-preference 110
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 then community add CBS
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 then accept
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 from community MATCH-LOCAL-PREF-120
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 from policy V4-RR-BGP-IN
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 then metric 0
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 then local-preference 120
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 then community add CBS
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 then accept
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes from community BACKUP
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes from policy V4-RR-BGP-IN
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes then metric 0
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes then local-preference 125
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes then community add CBS
+set policy-options policy-statement V4-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes then accept
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-AGGREGATE-ROUTES from protocol aggregate
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-AGGREGATE-ROUTES then metric 0
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-AGGREGATE-ROUTES then local-preference 130
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-AGGREGATE-ROUTES then next-hop self
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-AGGREGATE-ROUTES then accept
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term DEFAULT-ORIGINATE from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term DEFAULT-ORIGINATE from condition DSR-BBR-LINK-UP
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term DEFAULT-ORIGINATE then next-hop self
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term DEFAULT-ORIGINATE then accept
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-ROUTES from community MARKET-SPECIFIC
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-ROUTES then accept
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-EVPN from family evpn
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-EVPN from protocol bgp
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-EVPN then next-hop self
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-EVPN then accept
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-VPNV4 from family inet-vpn
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-VPNV4 from protocol bgp
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-VPNV4 then next-hop self
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-VPNV4 then accept
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-VPNV6 from family inet6-vpn
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-VPNV6 from protocol bgp
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-VPNV6 then next-hop self
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-VPNV6 then accept
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-BGPLU-ROUTES from protocol bgp
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-BGPLU-ROUTES from rib inet.3
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-BGPLU-ROUTES then next-hop self
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-BGPLU-ROUTES then accept
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-MCAST from protocol bgp
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-MCAST from rib inet.2
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-MCAST from community VIDEO
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-MCAST then next-hop self
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term CROSS-MARKET-MCAST then accept
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term REJECT from protocol bgp
+set policy-options policy-statement V4-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term REJECT then reject
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-AGGREGATE from route-filter ::127/128 orlonger
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-AGGREGATE then metric 0
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-AGGREGATE then local-preference 130
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-AGGREGATE then community add CBS
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-AGGREGATE then community add ANNOUNCE
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-AGGREGATE then accept
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-ANNOUNCED from route-filter ::127/128 exact
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-ANNOUNCED from route-filter 2210::/16 orlonger
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-ANNOUNCED then metric 0
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-ANNOUNCED then local-preference 130
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-ANNOUNCED then community add CBS
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-ANNOUNCED then community add ANNOUNCE
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-BUSINESS-ANNOUNCED then accept
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-RESIDENTIAL from route-filter ::127/128 exact
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-RESIDENTIAL from route-filter 2110::/16 orlonger
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-RESIDENTIAL then metric 0
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-RESIDENTIAL then local-preference 130
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-RESIDENTIAL then community add RES
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-RESIDENTIAL then community add ANNOUNCE
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-DATA-RESIDENTIAL then accept
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-INFRASTRUCTURE from route-filter ::127/128 exact
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-INFRASTRUCTURE then metric 0
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-INFRASTRUCTURE then local-preference 130
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-INFRASTRUCTURE then community set RDC-Internal
+set policy-options policy-statement V6-RR-BGP-IN term MRKT-INFRASTRUCTURE then accept
+set policy-options policy-statement V6-RR-BGP-IN term REJECT then reject
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 from community MATCH-LOCAL-PREF-90
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 from policy V6-RR-BGP-IN
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then metric 0
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then local-preference 90
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then community add ADD-TO-LOCAL-PREF-90
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then community add CBS
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then community add ANNOUNCE
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-90 then accept
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 from community MATCH-LOCAL-PREF-110
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 from policy V6-RR-BGP-IN
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 then metric 0
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 then local-preference 110
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 then community add CBS
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 then community add ANNOUNCE
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-110 then accept
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes from community BACKUP
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes from policy V6-RR-BGP-IN
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes then metric 0
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes then local-preference 125
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes then community add CBS
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes then community add ANNOUNCE
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term BACKUP-Routes then accept
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 from community MATCH-LOCAL-PREF-120
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 from policy V6-RR-BGP-IN
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 then metric 0
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 then local-preference 120
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 then community add CBS
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 then community add ANNOUNCE
+set policy-options policy-statement V6-RR-BGP-IN-IMPORT-OPTIONS term SET-LOCAL-PREF-120 then accept
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-AGGREGATE-ROUTES from protocol aggregate
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-AGGREGATE-ROUTES then next-hop self
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-AGGREGATE-ROUTES then accept
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-ROUTES from community MARKET-SPECIFIC
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term MARKET-ROUTES then accept
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term DEFAULT-ORIGINATE from route-filter ::/0 exact
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term DEFAULT-ORIGINATE from condition DSR-BBR-LINK-UP
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term DEFAULT-ORIGINATE then next-hop self
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term DEFAULT-ORIGINATE then accept
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term REJECT from protocol bgp
+set policy-options policy-statement V6-RR-CLIENTS-DEFAULT-PLUS-LOCAL-ROUTES-CUSTOM-EXPORT term REJECT then reject
+set policy-options policy-statement bogons term 10 from route-filter 127.0.0.0/32 exact
+set policy-options policy-statement bogons term 10 then reject
+set policy-options policy-statement default-originate term Advertise-Default from route-filter 0.0.0.0/0 exact
+set policy-options policy-statement default-originate term Advertise-Default then accept
+set policy-options policy-statement iBGP-POLICY term block-10-space from protocol bgp
+set policy-options policy-statement iBGP-POLICY term block-10-space from route-filter 10.0.0.0/8 exact
+set policy-options policy-statement iBGP-POLICY term block-10-space then reject
+set policy-options policy-statement iBGP-POLICY term MRKT-EXACT-AGGREGATE from route-filter 127.0.0.0/32 exact
+set policy-options policy-statement iBGP-POLICY term MRKT-EXACT-AGGREGATE then metric 0
+set policy-options policy-statement iBGP-POLICY term MRKT-EXACT-AGGREGATE then local-preference 130
+set policy-options policy-statement iBGP-POLICY term MRKT-EXACT-AGGREGATE then community add RDC-Internal
+set policy-options policy-statement iBGP-POLICY term MRKT-EXACT-AGGREGATE then next-hop self
+set policy-options policy-statement iBGP-POLICY term MRKT-EXACT-AGGREGATE then accept
+set policy-options policy-statement iBGP-POLICY term REJECT-V4-LOCAL from protocol aggregate
+set policy-options policy-statement iBGP-POLICY term REJECT-V4-LOCAL from prefix-list V4-LOCAL
+set policy-options policy-statement iBGP-POLICY term REJECT-V4-LOCAL then reject
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV4-BGP-LU from protocol bgp
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV4-BGP-LU from community BGP-LU
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV4-BGP-LU from route-filter 0.0.0.0/0 prefix-length-range /32-/32
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV4-BGP-LU then next-hop self
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV4-BGP-LU then accept
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV4-CB-ROUTES from community CB-TO-BACKBONE
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV4-CB-ROUTES from route-filter 0.0.0.0/0 prefix-length-range /8-/24
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV4-CB-ROUTES then next-hop self
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV4-CB-ROUTES then accept
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV6-CB-ROUTES from community CB-TO-BACKBONE
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV6-CB-ROUTES from route-filter ::/0 prefix-length-range /32-/48
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV6-CB-ROUTES then next-hop self
+set policy-options policy-statement iBGP-POLICY term MARKET-IPV6-CB-ROUTES then accept
+set policy-options policy-statement iBGP-POLICY term MARKET-ROUTES-SUPPRESS from protocol bgp
+set policy-options policy-statement iBGP-POLICY term MARKET-ROUTES-SUPPRESS from community MARKET-SPECIFIC
+set policy-options policy-statement iBGP-POLICY term MARKET-ROUTES-SUPPRESS then reject
+set policy-options policy-statement iBGP-POLICY term SUPPRESS-LOCAL-TAGGED-ROUTES from protocol bgp
+set policy-options policy-statement iBGP-POLICY term SUPPRESS-LOCAL-TAGGED-ROUTES from community LOCAL-ONLY
+set policy-options policy-statement iBGP-POLICY term SUPPRESS-LOCAL-TAGGED-ROUTES then reject
+set policy-options policy-statement iBGP-POLICY term SUPPRESS-LOCAL-ONLY-ROUTES from protocol static
+set policy-options policy-statement iBGP-POLICY term SUPPRESS-LOCAL-ONLY-ROUTES from protocol direct
+set policy-options policy-statement iBGP-POLICY term SUPPRESS-LOCAL-ONLY-ROUTES from prefix-list Local-Only-to-BGP
+set policy-options policy-statement iBGP-POLICY term SUPPRESS-LOCAL-ONLY-ROUTES then reject
+set policy-options policy-statement iBGP-POLICY term MARKET-AGGREGATE-ROUTES from protocol aggregate
+set policy-options policy-statement iBGP-POLICY term MARKET-AGGREGATE-ROUTES then metric 0
+set policy-options policy-statement iBGP-POLICY term MARKET-AGGREGATE-ROUTES then local-preference 130
+set policy-options policy-statement iBGP-POLICY term MARKET-AGGREGATE-ROUTES then next-hop self
+set policy-options policy-statement iBGP-POLICY term MARKET-AGGREGATE-ROUTES then accept
+set policy-options policy-statement iBGP-POLICY term STATIC_and_DIRECT-Internal apply-groups STATIC_and_DIRECT-TO-BGP
+set policy-options policy-statement iBGP-POLICY term STATIC_and_DIRECT-Internal then metric 0
+set policy-options policy-statement iBGP-POLICY term STATIC_and_DIRECT-Internal then community set RDC-Internal
+set policy-options policy-statement iBGP-POLICY term STATIC_and_DIRECT-Internal then next-hop self
+set policy-options policy-statement iBGP-POLICY term STATIC_and_DIRECT-Internal then accept
+set policy-options policy-statement iBGP-POLICY term Local-to-BGPv6 from protocol static
+set policy-options policy-statement iBGP-POLICY term Local-to-BGPv6 from protocol direct
+set policy-options policy-statement iBGP-POLICY term Local-to-BGPv6 from protocol aggregate
+set policy-options policy-statement iBGP-POLICY term Local-to-BGPv6 from prefix-list Local-to-BGPv6
+set policy-options policy-statement iBGP-POLICY term Local-to-BGPv6 then metric 0
+set policy-options policy-statement iBGP-POLICY term Local-to-BGPv6 then community set RDC-Internal
+set policy-options policy-statement iBGP-POLICY term Local-to-BGPv6 then accept
+set policy-options policy-statement iBGP-POLICY term BGP-All-Routes from protocol bgp
+set policy-options policy-statement iBGP-POLICY term BGP-All-Routes then next-hop self
+set policy-options policy-statement iBGP-POLICY term BGP-All-Routes then accept
+set policy-options policy-statement iBGP-in term ACCEPT-ALL then accept
+set policy-options policy-statement load-balance term load-balance-all then load-balance per-packet
+set policy-options community ADD-TO-LOCAL-PREF-90 members 3356:90
+set policy-options community ADD-TO-LOCAL-PREF-90 members 3549:100
+set policy-options community ADD-TO-LOCAL-PREF-90 members 3257:1960
+set policy-options community ANNOUNCE members 22773:999
+set policy-options community BACKUP members 22773:125
+set policy-options community BGP-LU members 22773:55...
+set policy-options community BGP-LU members 22773:59...
+set policy-options community CB-TO-BACKBONE members 22773:59...
+set policy-options community CBS members 22773:130
+set policy-options community CBS members 22773:64002
+set policy-options community CBS members 22773:64010
+set policy-options community CBS members 22773:59010
+set policy-options community CS-COI-TAG members 4:4
+set policy-options community INTERNAL members 22773:100
+set policy-options community LOCAL-CB-ROUTES members 22773:59...
+set policy-options community LOCAL-CB-ROUTES members 22773:64010
+set policy-options community LOCAL-ONLY members 22773:10099
+set policy-options community LOCAL-VIDEO members 22773:56010
+set policy-options community LOCAL_RDC members 22773:64010
+set policy-options community MARKET-SPECIFIC members "22773:4100[1-2]"
+set policy-options community MATCH-LOCAL-PREF-110 members 22773:110
+set policy-options community MATCH-LOCAL-PREF-120 members 22773:120
+set policy-options community MATCH-LOCAL-PREF-90 members 22773:90
+set policy-options community MVPN-TARGET members target:22773:2
+set policy-options community NO-EXPORT members no-export
+set policy-options community PREPEND-ONE-ALL members 22773:20001
+set policy-options community PREPEND-ONE-L3 members 22773:20011
+set policy-options community PREPEND-THREE-L3 members 22773:20013
+set policy-options community PREPEND-TWO-ALL members 22773:20002
+set policy-options community PREPEND-TWO-L3 members 22773:20012
+set policy-options community PRIMARY members 22773:130
+set policy-options community RDC-Internal members 22773:55010
+set policy-options community RDC-Internal members 22773:64002
+set policy-options community RDC-Internal members 22773:64010
+set policy-options community RES members 22773:130
+set policy-options community RES members 22773:62010
+set policy-options community RES members 22773:64002
+set policy-options community RES members 22773:64010
+set policy-options community SUPPRESS-ALL-PEERS members 22773:10100
+set policy-options community VIDEO members 22773:56...
+set policy-options community route-target members target:*:*
+set policy-options community v6-LOCAL-ANNOUNCE members 22773:999
+set policy-options community v6-LOCAL-ANNOUNCE members 22773:64010
+set policy-options as-path DENY-ASN->25 ".{26,}"
+set policy-options condition DSR-BBR-LINK-UP if-route-exists 99.2.8.0/24
+set policy-options condition DSR-BBR-LINK-UP if-route-exists table inet.0
+set class-of-service apply-groups WMK-INTERFACE
+set class-of-service forwarding-policy next-hop-map CBF-MAP forwarding-class BEST-EFFORT lsp-next-hop .*-BE
+set class-of-service forwarding-policy next-hop-map CBF-MAP forwarding-class VOICE lsp-next-hop .*EF
+set class-of-service forwarding-policy next-hop-map CBF-MAP forwarding-class INTERACTIVE lsp-next-hop .*AF
+set class-of-service forwarding-policy next-hop-map CBF-MAP forwarding-class NON-REAL-TIME lsp-next-hop .*AF
+set class-of-service forwarding-policy next-hop-map CBF-MAP forwarding-class REAL-TIME lsp-next-hop .*AF
+set class-of-service forwarding-policy next-hop-map CBF-MAP forwarding-class VIDEO lsp-next-hop .*AF
+set class-of-service classifiers dscp-ipv6 CLASSIFY-DSCP-IPV6 forwarding-class BEST-EFFORT loss-priority high code-points BEST-EFFORT-be
+set class-of-service classifiers dscp-ipv6 CLASSIFY-DSCP-IPV6 forwarding-class NON-REAL-TIME loss-priority high code-points NON-REAL-TIME-af11
+set class-of-service classifiers dscp-ipv6 CLASSIFY-DSCP-IPV6 forwarding-class INTERACTIVE loss-priority low code-points INTERACTIVE-af21
+set class-of-service classifiers dscp-ipv6 CLASSIFY-DSCP-IPV6 forwarding-class REAL-TIME loss-priority low code-points REAL-TIME-af31
+set class-of-service classifiers dscp-ipv6 CLASSIFY-DSCP-IPV6 forwarding-class VIDEO loss-priority low code-points VIDEO-af41
+set class-of-service classifiers dscp-ipv6 CLASSIFY-DSCP-IPV6 forwarding-class VOICE loss-priority low code-points VOICE-ef
+set class-of-service classifiers dscp-ipv6 CLASSIFY-DSCP-IPV6 forwarding-class NETWORK-CONTROL loss-priority low code-points NETWORK-CONTROL-nc
+set class-of-service classifiers exp CLASSIFY-EXP forwarding-class BEST-EFFORT loss-priority high code-points BEST-EFFORT-be
+set class-of-service classifiers exp CLASSIFY-EXP forwarding-class NON-REAL-TIME loss-priority high code-points NON-REAL-TIME-af11
+set class-of-service classifiers exp CLASSIFY-EXP forwarding-class INTERACTIVE loss-priority low code-points INTERACTIVE-af21
+set class-of-service classifiers exp CLASSIFY-EXP forwarding-class REAL-TIME loss-priority low code-points REAL-TIME-af31
+set class-of-service classifiers exp CLASSIFY-EXP forwarding-class VIDEO loss-priority low code-points VIDEO-af41
+set class-of-service classifiers exp CLASSIFY-EXP forwarding-class VOICE loss-priority low code-points VOICE-ef
+set class-of-service classifiers exp CLASSIFY-EXP forwarding-class NETWORK-CONTROL loss-priority low code-points NETWORK-CONTROL-nc1
+set class-of-service classifiers ieee-802.1 CLASSIFY-DOT1P forwarding-class BEST-EFFORT loss-priority high code-points BEST-EFFORT-be
+set class-of-service classifiers ieee-802.1 CLASSIFY-DOT1P forwarding-class NON-REAL-TIME loss-priority high code-points NON-REAL-TIME-af11
+set class-of-service classifiers ieee-802.1 CLASSIFY-DOT1P forwarding-class INTERACTIVE loss-priority low code-points INTERACTIVE-af21
+set class-of-service classifiers ieee-802.1 CLASSIFY-DOT1P forwarding-class REAL-TIME loss-priority low code-points REAL-TIME-af31
+set class-of-service classifiers ieee-802.1 CLASSIFY-DOT1P forwarding-class VIDEO loss-priority low code-points VIDEO-af41
+set class-of-service classifiers ieee-802.1 CLASSIFY-DOT1P forwarding-class VOICE loss-priority low code-points VOICE-ef
+set class-of-service classifiers ieee-802.1 CLASSIFY-DOT1P forwarding-class NETWORK-CONTROL loss-priority low code-points NETWORK-CONTROL-nc
+set class-of-service classifiers inet-precedence CLASSIFY-IPP forwarding-class BEST-EFFORT loss-priority high code-points BEST-EFFORT-be
+set class-of-service classifiers inet-precedence CLASSIFY-IPP forwarding-class NON-REAL-TIME loss-priority high code-points NON-REAL-TIME-af11
+set class-of-service classifiers inet-precedence CLASSIFY-IPP forwarding-class INTERACTIVE loss-priority low code-points INTERACTIVE-af21
+set class-of-service classifiers inet-precedence CLASSIFY-IPP forwarding-class REAL-TIME loss-priority low code-points REAL-TIME-af31
+set class-of-service classifiers inet-precedence CLASSIFY-IPP forwarding-class VIDEO loss-priority low code-points VIDEO-af41
+set class-of-service classifiers inet-precedence CLASSIFY-IPP forwarding-class VOICE loss-priority low code-points VOICE-ef
+set class-of-service classifiers inet-precedence CLASSIFY-IPP forwarding-class NETWORK-CONTROL loss-priority low code-points NETWORK-CONTROL-nc1
+set class-of-service code-point-aliases dscp-ipv6 BEST-EFFORT-be 000000
+set class-of-service code-point-aliases dscp-ipv6 NON-REAL-TIME-af11 001000
+set class-of-service code-point-aliases dscp-ipv6 INTERACTIVE-af21 010000
+set class-of-service code-point-aliases dscp-ipv6 REAL-TIME-af31 011000
+set class-of-service code-point-aliases dscp-ipv6 VIDEO-af41 100000
+set class-of-service code-point-aliases dscp-ipv6 VOICE-ef 101000
+set class-of-service code-point-aliases dscp-ipv6 NETWORK-CONTROL-nc 110000
+set class-of-service code-point-aliases dscp-ipv6 INTERACTIVE-WMK-af32 011100
+set class-of-service code-point-aliases exp BEST-EFFORT-be 000
+set class-of-service code-point-aliases exp NON-REAL-TIME-af11 001
+set class-of-service code-point-aliases exp INTERACTIVE-af21 010
+set class-of-service code-point-aliases exp REAL-TIME-af31 011
+set class-of-service code-point-aliases exp VIDEO-af41 100
+set class-of-service code-point-aliases exp VOICE-ef 101
+set class-of-service code-point-aliases exp NETWORK-CONTROL-nc1 110
+set class-of-service code-point-aliases ieee-802.1 BEST-EFFORT-be 000
+set class-of-service code-point-aliases ieee-802.1 NON-REAL-TIME-af11 001
+set class-of-service code-point-aliases ieee-802.1 INTERACTIVE-af21 010
+set class-of-service code-point-aliases ieee-802.1 REAL-TIME-af31 011
+set class-of-service code-point-aliases ieee-802.1 VIDEO-af41 100
+set class-of-service code-point-aliases ieee-802.1 VOICE-ef 101
+set class-of-service code-point-aliases ieee-802.1 NETWORK-CONTROL-nc 110
+set class-of-service code-point-aliases inet-precedence BEST-EFFORT-be 000
+set class-of-service code-point-aliases inet-precedence NON-REAL-TIME-af11 001
+set class-of-service code-point-aliases inet-precedence INTERACTIVE-af21 010
+set class-of-service code-point-aliases inet-precedence REAL-TIME-af31 011
+set class-of-service code-point-aliases inet-precedence VIDEO-af41 100
+set class-of-service code-point-aliases inet-precedence VOICE-ef 101
+set class-of-service code-point-aliases inet-precedence NETWORK-CONTROL-nc1 110
+set class-of-service host-outbound-traffic forwarding-class NETWORK-CONTROL
+set class-of-service host-outbound-traffic dscp-code-point 110000
+set class-of-service drop-profiles RED-BEST-EFFORT interpolate fill-level 15
+set class-of-service drop-profiles RED-BEST-EFFORT interpolate fill-level 95
+set class-of-service drop-profiles RED-BEST-EFFORT interpolate drop-probability 1
+set class-of-service drop-profiles RED-BEST-EFFORT interpolate drop-probability 10
+set class-of-service forwarding-classes queue 0 BEST-EFFORT
+set class-of-service forwarding-classes queue 1 NON-REAL-TIME
+set class-of-service forwarding-classes queue 2 INTERACTIVE
+set class-of-service forwarding-classes queue 3 REAL-TIME
+set class-of-service forwarding-classes queue 4 VIDEO
+set class-of-service forwarding-classes queue 5 VOICE
+set class-of-service forwarding-classes queue 6 NETWORK-CONTROL
+set class-of-service interfaces ge-*/*/* scheduler-map QOS-POLICY
+set class-of-service interfaces ge-*/*/* unit * classifiers dscp-ipv6 CLASSIFY-DSCP-IPV6
+set class-of-service interfaces ge-*/*/* unit * classifiers exp CLASSIFY-EXP
+set class-of-service interfaces ge-*/*/* unit * classifiers ieee-802.1 CLASSIFY-DOT1P
+set class-of-service interfaces ge-*/*/* unit * classifiers inet-precedence CLASSIFY-IPP
+set class-of-service interfaces ge-*/*/* unit * rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6
+set class-of-service interfaces ge-*/*/* unit * rewrite-rules exp WRITE-EXP protocol mpls-any
+set class-of-service interfaces ge-*/*/* unit * rewrite-rules inet-precedence WRITE-IPP
+set class-of-service interfaces ae* scheduler-map QOS-POLICY
+set class-of-service interfaces ae* unit * classifiers dscp-ipv6 CLASSIFY-DSCP-IPV6
+set class-of-service interfaces ae* unit * classifiers exp CLASSIFY-EXP
+set class-of-service interfaces ae* unit * classifiers ieee-802.1 CLASSIFY-DOT1P
+set class-of-service interfaces ae* unit * classifiers inet-precedence CLASSIFY-IPP
+set class-of-service interfaces ae* unit * rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6
+set class-of-service interfaces ae* unit * rewrite-rules exp WRITE-EXP protocol mpls-any
+set class-of-service interfaces ae* unit * rewrite-rules inet-precedence WRITE-IPP
+set class-of-service interfaces ae3 scheduler-map QOS-POLICY-MRKT
+set class-of-service interfaces ae22 scheduler-map QOS-POLICY-MRKT
+set class-of-service interfaces ae33 scheduler-map QOS-POLICY-MRKT
+set class-of-service routing-instances all classifiers exp CLASSIFY-EXP
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class BEST-EFFORT loss-priority low code-point BEST-EFFORT-be
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class BEST-EFFORT loss-priority high code-point BEST-EFFORT-be
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class NON-REAL-TIME loss-priority low code-point NON-REAL-TIME-af11
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class NON-REAL-TIME loss-priority high code-point NON-REAL-TIME-af11
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class INTERACTIVE loss-priority low code-point INTERACTIVE-af21
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class INTERACTIVE loss-priority high code-point INTERACTIVE-af21
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class REAL-TIME loss-priority low code-point REAL-TIME-af31
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class REAL-TIME loss-priority high code-point REAL-TIME-af31
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class VIDEO loss-priority low code-point VIDEO-af41
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class VIDEO loss-priority high code-point VIDEO-af41
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class VOICE loss-priority low code-point VOICE-ef
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class VOICE loss-priority high code-point VOICE-ef
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class NETWORK-CONTROL loss-priority low code-point NETWORK-CONTROL-nc
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6 forwarding-class NETWORK-CONTROL loss-priority high code-point NETWORK-CONTROL-nc
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class BEST-EFFORT loss-priority low code-point BEST-EFFORT-be
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class BEST-EFFORT loss-priority high code-point BEST-EFFORT-be
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class NON-REAL-TIME loss-priority low code-point NON-REAL-TIME-af11
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class NON-REAL-TIME loss-priority high code-point NON-REAL-TIME-af11
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class INTERACTIVE loss-priority low code-point INTERACTIVE-WMK-af32
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class INTERACTIVE loss-priority high code-point INTERACTIVE-WMK-af32
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class REAL-TIME loss-priority low code-point REAL-TIME-af31
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class REAL-TIME loss-priority high code-point REAL-TIME-af31
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class VIDEO loss-priority low code-point VIDEO-af41
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class VIDEO loss-priority high code-point VIDEO-af41
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class VOICE loss-priority low code-point VOICE-ef
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class VOICE loss-priority high code-point VOICE-ef
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class NETWORK-CONTROL loss-priority low code-point NETWORK-CONTROL-nc
+set class-of-service rewrite-rules dscp-ipv6 WRITE-DSCP-IPV6-WMK forwarding-class NETWORK-CONTROL loss-priority high code-point NETWORK-CONTROL-nc
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class BEST-EFFORT loss-priority low code-point BEST-EFFORT-be
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class BEST-EFFORT loss-priority high code-point BEST-EFFORT-be
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class NON-REAL-TIME loss-priority low code-point NON-REAL-TIME-af11
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class NON-REAL-TIME loss-priority high code-point NON-REAL-TIME-af11
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class INTERACTIVE loss-priority low code-point INTERACTIVE-af21
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class INTERACTIVE loss-priority high code-point INTERACTIVE-af21
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class REAL-TIME loss-priority low code-point REAL-TIME-af31
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class REAL-TIME loss-priority high code-point REAL-TIME-af31
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class VIDEO loss-priority low code-point VIDEO-af41
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class VIDEO loss-priority high code-point VIDEO-af41
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class VOICE loss-priority low code-point VOICE-ef
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class VOICE loss-priority high code-point VOICE-ef
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class NETWORK-CONTROL loss-priority low code-point NETWORK-CONTROL-nc1
+set class-of-service rewrite-rules exp WRITE-EXP forwarding-class NETWORK-CONTROL loss-priority high code-point NETWORK-CONTROL-nc1
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class BEST-EFFORT loss-priority low code-point BEST-EFFORT-be
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class BEST-EFFORT loss-priority high code-point BEST-EFFORT-be
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class NON-REAL-TIME loss-priority low code-point NON-REAL-TIME-af11
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class NON-REAL-TIME loss-priority high code-point NON-REAL-TIME-af11
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class INTERACTIVE loss-priority low code-point INTERACTIVE-af21
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class INTERACTIVE loss-priority high code-point INTERACTIVE-af21
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class REAL-TIME loss-priority low code-point REAL-TIME-af31
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class REAL-TIME loss-priority high code-point REAL-TIME-af31
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class VIDEO loss-priority low code-point VIDEO-af41
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class VIDEO loss-priority high code-point VIDEO-af41
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class VOICE loss-priority low code-point VOICE-ef
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class VOICE loss-priority high code-point VOICE-ef
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class NETWORK-CONTROL loss-priority low code-point NETWORK-CONTROL-nc1
+set class-of-service rewrite-rules inet-precedence WRITE-IPP forwarding-class NETWORK-CONTROL loss-priority high code-point NETWORK-CONTROL-nc1
+set class-of-service scheduler-maps QOS-POLICY forwarding-class BEST-EFFORT scheduler BEST-EFFORT-Scheduler
+set class-of-service scheduler-maps QOS-POLICY forwarding-class NON-REAL-TIME scheduler NON-REAL-TIME-Scheduler
+set class-of-service scheduler-maps QOS-POLICY forwarding-class INTERACTIVE scheduler INTERACTIVE-Scheduler
+set class-of-service scheduler-maps QOS-POLICY forwarding-class REAL-TIME scheduler REAL-TIME-Scheduler
+set class-of-service scheduler-maps QOS-POLICY forwarding-class VIDEO scheduler VIDEO-Scheduler
+set class-of-service scheduler-maps QOS-POLICY forwarding-class VOICE scheduler VOICE-Scheduler
+set class-of-service scheduler-maps QOS-POLICY forwarding-class NETWORK-CONTROL scheduler NETWORK-CONTROL-Scheduler
+set class-of-service scheduler-maps MRKT-QOS-POLICY forwarding-class BEST-EFFORT scheduler MRKT-BEST-EFFORT-SCHEDULER
+set class-of-service scheduler-maps MRKT-QOS-POLICY forwarding-class NON-REAL-TIME scheduler MRKT-NON-REAL-TIME-SCHEDULER
+set class-of-service scheduler-maps MRKT-QOS-POLICY forwarding-class INTERACTIVE scheduler MRKT-INTERACTIVE-SCHEDULER
+set class-of-service scheduler-maps MRKT-QOS-POLICY forwarding-class REAL-TIME scheduler MRKT-REAL-TIME-SCHEDULER
+set class-of-service scheduler-maps MRKT-QOS-POLICY forwarding-class VIDEO scheduler MRKT-VIDEO-SCHEDULER
+set class-of-service scheduler-maps MRKT-QOS-POLICY forwarding-class VOICE scheduler MRKT-VOICE-SCHEDULER
+set class-of-service scheduler-maps MRKT-QOS-POLICY forwarding-class NETWORK-CONTROL scheduler MRKT-NETWORK-CONTROL-SCHEDULER
+set class-of-service scheduler-maps QOS-POLICY-MRKT forwarding-class BEST-EFFORT scheduler BEST-EFFORT-Scheduler
+set class-of-service scheduler-maps QOS-POLICY-MRKT forwarding-class NON-REAL-TIME scheduler NON-REAL-TIME-Scheduler
+set class-of-service scheduler-maps QOS-POLICY-MRKT forwarding-class INTERACTIVE scheduler INTERACTIVE-Scheduler
+set class-of-service scheduler-maps QOS-POLICY-MRKT forwarding-class REAL-TIME scheduler REAL-TIME-Scheduler
+set class-of-service scheduler-maps QOS-POLICY-MRKT forwarding-class VIDEO scheduler VIDEO-Scheduler-MRKT
+set class-of-service scheduler-maps QOS-POLICY-MRKT forwarding-class VOICE scheduler VOICE-Scheduler
+set class-of-service scheduler-maps QOS-POLICY-MRKT forwarding-class NETWORK-CONTROL scheduler NETWORK-CONTROL-Scheduler
+set class-of-service schedulers BEST-EFFORT-Scheduler transmit-rate percent 5
+set class-of-service schedulers BEST-EFFORT-Scheduler buffer-size percent 55
+set class-of-service schedulers BEST-EFFORT-Scheduler priority low
+set class-of-service schedulers BEST-EFFORT-Scheduler drop-profile-map loss-priority any protocol any drop-profile RED-BEST-EFFORT
+set class-of-service schedulers NON-REAL-TIME-Scheduler transmit-rate percent 10
+set class-of-service schedulers NON-REAL-TIME-Scheduler buffer-size percent 10
+set class-of-service schedulers NON-REAL-TIME-Scheduler priority low
+set class-of-service schedulers INTERACTIVE-Scheduler transmit-rate percent 10
+set class-of-service schedulers INTERACTIVE-Scheduler buffer-size percent 10
+set class-of-service schedulers INTERACTIVE-Scheduler priority medium-low
+set class-of-service schedulers REAL-TIME-Scheduler transmit-rate percent 10
+set class-of-service schedulers REAL-TIME-Scheduler buffer-size percent 10
+set class-of-service schedulers REAL-TIME-Scheduler priority medium-low
+set class-of-service schedulers VIDEO-Scheduler transmit-rate percent 2
+set class-of-service schedulers VIDEO-Scheduler buffer-size percent 1
+set class-of-service schedulers VIDEO-Scheduler priority medium-high
+set class-of-service schedulers VIDEO-Scheduler-MRKT transmit-rate percent 30
+set class-of-service schedulers VIDEO-Scheduler-MRKT buffer-size percent 1
+set class-of-service schedulers VIDEO-Scheduler-MRKT priority medium-high
+set class-of-service schedulers VOICE-Scheduler priority strict-high
+set class-of-service schedulers NETWORK-CONTROL-Scheduler transmit-rate percent 1
+set class-of-service schedulers NETWORK-CONTROL-Scheduler buffer-size percent 0
+set class-of-service schedulers NETWORK-CONTROL-Scheduler priority high
+set class-of-service schedulers MRKT-BEST-EFFORT-SCHEDULER transmit-rate percent 5
+set class-of-service schedulers MRKT-BEST-EFFORT-SCHEDULER buffer-size percent 55
+set class-of-service schedulers MRKT-BEST-EFFORT-SCHEDULER priority low
+set class-of-service schedulers MRKT-BEST-EFFORT-SCHEDULER drop-profile-map loss-priority any protocol any drop-profile RED-BEST-EFFORT
+set class-of-service schedulers MRKT-NON-REAL-TIME-SCHEDULER transmit-rate percent 10
+set class-of-service schedulers MRKT-NON-REAL-TIME-SCHEDULER buffer-size percent 10
+set class-of-service schedulers MRKT-NON-REAL-TIME-SCHEDULER priority low
+set class-of-service schedulers MRKT-INTERACTIVE-SCHEDULER transmit-rate percent 10
+set class-of-service schedulers MRKT-INTERACTIVE-SCHEDULER buffer-size percent 10
+set class-of-service schedulers MRKT-INTERACTIVE-SCHEDULER priority medium-low
+set class-of-service schedulers MRKT-REAL-TIME-SCHEDULER transmit-rate percent 10
+set class-of-service schedulers MRKT-REAL-TIME-SCHEDULER buffer-size percent 10
+set class-of-service schedulers MRKT-REAL-TIME-SCHEDULER priority medium-low
+set class-of-service schedulers MRKT-VIDEO-SCHEDULER transmit-rate percent 30
+set class-of-service schedulers MRKT-VIDEO-SCHEDULER buffer-size percent 1
+set class-of-service schedulers MRKT-VIDEO-SCHEDULER priority medium-high
+set class-of-service schedulers MRKT-VOICE-SCHEDULER priority strict-high
+set class-of-service schedulers MRKT-NETWORK-CONTROL-SCHEDULER transmit-rate percent 1
+set class-of-service schedulers MRKT-NETWORK-CONTROL-SCHEDULER buffer-size percent 0
+set class-of-service schedulers MRKT-NETWORK-CONTROL-SCHEDULER priority high
+set routing-instances MVPN instance-type vrf
+set routing-instances MVPN interface ge-0/0/5.0
+set routing-instances MVPN interface lo0.1
+set routing-instances MVPN route-distinguisher 1:1
+set routing-instances MVPN provider-tunnel selective group 224.0.0.0/4 source 0.0.0.0/0 ingress-replication create-new-ucast-tunnel
+set routing-instances MVPN provider-tunnel selective group 224.0.0.0/4 source 0.0.0.0/0 ingress-replication label-switched-path label-switched-path-template MVPN-LSP-TEMPLATE
+set routing-instances MVPN vrf-import MVPN-IMPORT
+set routing-instances MVPN vrf-export MVPN-EXPORT
+set routing-instances MVPN vrf-table-label
+set routing-instances MVPN routing-options router-id 10.255.0.108
+set routing-instances MVPN routing-options multicast ssm-groups 224.0.0.0/4
+set routing-instances MVPN protocols bgp group MVPN type internal
+set routing-instances MVPN protocols bgp group MVPN local-address 10.255.0.108
+set routing-instances MVPN protocols bgp group MVPN import MVPN-BGP-IN
+set routing-instances MVPN protocols bgp group MVPN family inet multicast
+set routing-instances MVPN protocols bgp group MVPN export MVPN-BGP-OUT
+set routing-instances MVPN protocols bgp group MVPN neighbor 10.10.0.112
+set routing-instances MVPN protocols isis suppress-attached-bit
+set routing-instances MVPN protocols isis level 1 wide-metrics-only
+set routing-instances MVPN protocols isis level 2 disable
+set routing-instances MVPN protocols isis interface ge-0/0/5.0 point-to-point
+set routing-instances MVPN protocols isis interface ge-0/0/5.0 level 1 metric 16
+set routing-instances MVPN protocols isis interface ge-0/0/5.0 level 2 disable
+set routing-instances MVPN protocols isis interface lo0.1 passive
+set routing-instances MVPN protocols isis interface lo0.1 level 2 disable
+set routing-instances MVPN protocols pim rib-group inet MVPN-PIM
+set routing-instances MVPN protocols pim import MVPN-PIM-IMPORT
+set routing-instances MVPN protocols pim interface ge-0/0/5.0 family inet
+set routing-instances MVPN protocols pim interface ge-0/0/5.0 mode sparse
+set routing-instances MVPN protocols pim interface ge-0/0/5.0 hello-interval 1
+set routing-instances MVPN protocols mvpn
+
+root@D08-DSRJ02> 
+
+root@D08-DSRJ02> 
+
