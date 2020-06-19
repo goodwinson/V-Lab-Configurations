@@ -1,4 +1,4 @@
-﻿root@D08-DSRJ02> show configuration | display set | no-more 
+
 set version 18.2R1.9
 set groups RSVP-OPTIONS protocols rsvp preemption aggressive
 set groups RSVP-OPTIONS protocols rsvp preemption soft-preemption cleanup-timer 30
@@ -1009,8 +1009,3 @@ set routing-instances MVPN protocols pim interface ge-0/0/5.0 family inet
 set routing-instances MVPN protocols pim interface ge-0/0/5.0 mode sparse
 set routing-instances MVPN protocols pim interface ge-0/0/5.0 hello-interval 1
 set routing-instances MVPN protocols mvpn
-
-root@D08-DSRJ02> 
-
-root@D08-DSRJ02> 
-
