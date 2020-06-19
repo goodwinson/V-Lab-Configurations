@@ -1,4 +1,3 @@
-﻿root@D07-DSRJ01> show configuration | display set | no-more 
 set version 18.4R1.8
 set groups RSVP-OPTIONS protocols rsvp preemption aggressive
 set groups RSVP-OPTIONS protocols rsvp preemption soft-preemption cleanup-timer 30
